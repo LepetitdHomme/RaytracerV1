@@ -6,7 +6,7 @@
 /*   By: csellier <camillesellier@live.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/07 12:41:28 by csellier          #+#    #+#             */
-/*   Updated: 2017/04/07 15:47:02 by csellier         ###   ########.fr       */
+/*   Updated: 2017/04/07 16:37:59 by csellier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,5 @@ int				parse(int ar, char **av)
 		return (1);
 	}
 	close(fd);
-	printf("%d / %d\n", get_static_env(NULL)->scr_w, get_static_env(NULL)->scr_h);
 	return (0);
 }

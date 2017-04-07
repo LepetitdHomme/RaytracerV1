@@ -6,7 +6,7 @@
 /*   By: csellier <camillesellier@live.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/07 12:37:15 by csellier          #+#    #+#             */
-/*   Updated: 2017/04/07 15:42:33 by csellier         ###   ########.fr       */
+/*   Updated: 2017/04/07 16:47:47 by csellier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,17 @@ static int	warning(int i)
 	return (0);
 }
 
+static int	error2(int i)
+{
+	ft_putstr_fd(ERROR, 2);
+	if (i == 6)
+		ft_putendl_fd("error : mlx_init() failed", 2);
+	if (i == 7)
+		ft_putendl_fd("error : mlx_new_window() failed", 2);
+	ft_putstr_fd(END, 2);
+	return (1);
+}
+
 int			error(int i)
 {
 	ft_putstr_fd(ERROR, 2);
@@ -53,8 +64,8 @@ int			error(int i)
 		ft_putendl_fd("file error : missing screen or screen wrong format", 2);
 		usage(0);
 	}
-	ft_putstr_fd(END, 2);
 	if (i >= 50)
 		warning(i);
-	return (1);
+	ft_putstr_fd(END, 2);
+	return (error2(i));
 }
